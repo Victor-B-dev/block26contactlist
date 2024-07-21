@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const selectedContactId = ({ selectedContactId, setSelectedContactId }) => {
+const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
   const [contact, setContact] = useState([])
 
   useEffect(()=>{
@@ -28,4 +28,4 @@ const selectedContactId = ({ selectedContactId, setSelectedContactId }) => {
   )
 }
 
-export default selectedContactId
+export default SelectedContact

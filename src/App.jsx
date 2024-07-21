@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <>
-      {selectedContactId.name ? (
+      {selectedContactId.id ? (
         <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId}/>
       ) : (
         <ContactList setSelectedContactId={setSelectedContactId} />
