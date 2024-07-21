@@ -1,5 +1,3 @@
-
-
 const ContactRow = ({ contact }) => {
   return (
     <tr>

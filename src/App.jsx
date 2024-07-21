@@ -1,11 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { useState, } from 'react'
+import ContactList from './components/ContactList.jsx'
+import SelectedContact from "./components/SelectedContact"
+import './index.css'
 
-function App() {
+const App = () => {
+  const [selectedContactID, setSelectedContactID] = useState[null];
 
   return (
     <>
-      
+      {selectedContactId ? (
+        <div>Selected Contact View</div>
+      ) : (
+        <ContactList />
+      )}
     </>
   )
 }
