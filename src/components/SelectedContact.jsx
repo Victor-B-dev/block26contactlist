@@ -1,29 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
   const [contact, setContact] = useState([])
 
-  useEffect(()=>{
-    async function fetchContact() {
+  const { id } = selectedContactId
+
+  const getContact = async() => {
       try {
-        const response = await fetch (`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`)
+        const response = await fetch (`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${id}`)
         const result = await response.json();
         setContact(result);
       } catch (error) {
         console.error(error);
       }
-    }
-    fetchContact()
-  }, []);
+  }
+  getContact();
 
   return (
     <>
       <h1>Your Desired Contact</h1>
-      <p> {contact.name} 
-          {contact.email} 
-          {contact.phone}
-      </p>
-      <button onClick={() => {setSelectedContactId=({})}}> Go Back to Contact List </button>
+      <p> Contact Name: {contact.name} </p>
+      <p> Email: {contact.email}  </p>
+      <p> Phone# {contact.phone} </p>
+      <button onClick={()=> {setSelectedContactId({})}}> Go Back to Contact List </button>
     </>
   )
 }
