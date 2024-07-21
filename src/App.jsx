@@ -4,14 +4,14 @@ import SelectedContact from "./components/SelectedContact"
 import './index.css'
 
 const App = () => {
-  const [selectedContactID, setSelectedContactID] = useState[null];
+  const [selectedContactId, setSelectedContactId] = useState({});
 
   return (
     <>
-      {selectedContactId ? (
-        <div>Selected Contact View</div>
+      {selectedContactId.name ? (
+        <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId}/>
       ) : (
-        <ContactList />
+        <ContactList setSelectedContactId={setSelectedContactId} />
       )}
     </>
   )
